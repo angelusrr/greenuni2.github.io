@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenUni - Reciclaje</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: url('https://via.placeholder.com/1920x1080.png?text=Fondo+de+Reciclaje') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+        header {
+            background: rgba(35, 109, 78, 0.9);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            background: rgba(29, 87, 61, 0.9);
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+        }
+        .hero {
+            background: #eaf5ea;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .hero h2 {
+            color: #236d4e;
+            font-size: 2em;
+        }
+        .hero p {
+            margin-top: 10px;
+        }
+        .hero a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #236d4e;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .hero a:hover {
+            background-color: #1d573d;
+        }
+        section {
+            margin-top: 40px;
+        }
+        section h3 {
+            color: #236d4e;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: auto;
+        }
+        input, textarea, button {
+            font-size: 16px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #236d4e;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 15px;
+        }
+        button:hover {
+            background-color: #1d573d;
+        }
+        .success-message {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        footer {
+            background: rgba(29, 87, 61, 0.9);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+        .about-us {
+            background: rgba(35, 109, 78, 0.9);
+            padding: 40px;
+            color: white;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        .about-us h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .about-us p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .contact {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        .contact h3 {
+            color: #236d4e;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .contact p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function showSuccessMessage(event) {
+            event.preventDefault(); // Evita que el formulario se envíe
+
+            // Muestra el mensaje de éxito
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+
+            // Limpia los campos del formulario
+            const form = event.target;
+            form.reset();
+
+            // Oculta el mensaje después de unos segundos (opcional)
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 3000); // El mensaje desaparece después de 3 segundos
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>GreenUni</h1>
+        <p>¡Haz de la U, un lugar mejor!</p>
+    </header>
+    <nav>
+        <a href="#top">Inicio</a>
+        <a href="#aboutUs">Sobre nosotros</a>
+        <a href="#contact">Contacto</a>
+    </nav>
+    <div class="container" id="top">
+        <div class="hero">
+            <h2>Bienvenido a GreenUni</h2>
+            <p>Gracias por ser parte del cambio. Tu esfuerzo al reciclar contribuye directamente a reducir la contaminación, conservar recursos naturales y promover una comunidad más sostenible. Juntos, estamos haciendo un impacto positivo para las futuras generaciones.</p>
+            <a href="https://sites.google.com/view/greenuni/p%C3%A1gina-principal" target="_blank">Visita nuestra web</a>
+        </div>
+
+        <section class="form-container" id="form">
+            <h3>Regístrate</h3>
+            <form onsubmit="showSuccessMessage(event)">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" placeholder="Tu nombre completo" required>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Deja un mensaje o ingresa tu curso" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="successMessage" class="success-message">
+                ¡Se ha registrado correctamente!
+            </div>
+        </section>
+
+        <section class="about-us" id="aboutUs">
+            <h3>Sobre Nosotros</h3>
+            <p>En GreenUni, creemos en un futuro sostenible y en la importancia de cuidar nuestro planeta. Fundada en [Año de Fundación], nuestra misión es promover prácticas de reciclaje responsables y educar a la comunidad sobre la importancia de reducir, reutilizar y reciclar.</p>
+            <p>Te invitamos a unirte a nuestra misión y a ser parte del cambio. Juntos, podemos hacer una diferencia significativa en la protección de nuestro planeta. Descubre cómo puedes contribuir y participar en nuestras iniciativas de reciclaje.</p>
+            <p>Nuestra misión es transformar la manera en que las personas manejan sus residuos, ofreciendo soluciones innovadoras y accesibles para el reciclaje. Nos esforzamos por crear un impacto positivo en el medio ambiente y en la vida de las personas, fomentando una cultura de sostenibilidad.</p>
+        </section>
+
+        <section class="contact" id="contact">
+            <h3>Contacto</h3>
+            <p>Comunícate:</p>
+            <p>Teléfono: 096 334 7005</p>
+            <p>Correo: greenuni@pucesa.edu.ec</p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 GreenUni. Todos los derechos reservados.</p>
+    </footer>
+    
+</body>
+</html>
+
+
+
